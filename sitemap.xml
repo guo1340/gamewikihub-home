@@ -20,5 +20,8 @@
   </sitemap>
   <sitemap>
     <loc>https://caves-of-qud.gamewikihub.com/sitemap.xml</loc>
+  </sitemap>  
+  <sitemap>
+    <loc>https://dwarf-fortress.gamewikihub.com/sitemap.xml</loc>
   </sitemap>
 </sitemapindex>

@@ -21,6 +21,18 @@ network. Each game wiki lives on its own subdomain (e.g.
 
 Pure static HTML/CSS — no build step, no dependencies.
 
+## Local preview
+
+Run the server from this folder:
+
+```powershell
+python -m http.server 8080
+```
+
+Then open `http://localhost:8080/`. Internal links point to the real static
+files, such as `/about.html` and `/contact.html`, so they work with Python's
+built-in static server.
+
 ## Deploying to Cloudflare Pages
 
 1. Push this folder as the root of a new GitHub repo (e.g. `gamewikihub-home`).

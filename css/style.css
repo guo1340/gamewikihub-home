@@ -1,17 +1,51 @@
 /* ============================================
    GameWikiHub — Stylesheet
    ============================================ */
+:root {
+  --bg: #0f1115;
+  --bg-2: #161922;
+  --bg-3: #1f2330;
+  --bg-4: #2a2f3d;
+  --border: #2a2f3d;
+  --border-light: #3a3f4d;
+  --text: #e6e8ee;
+  --muted: #9aa0ad;
+  --accent: #f5a524;
+  --accent-2: #e3679a;
+  --link: #7ab7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+  font-size: 15px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 220px 1fr 260px;
   gap: 24px;
-  max-width: 1400px;
+  width: min(100%, 1400px);
   margin: 0 auto;
   padding: 28px 24px;
-}
-
-.layout-2col {
-  grid-template-columns: 220px 1fr;
 }
 
 .layout main {
@@ -59,44 +93,6 @@ aside ul li a.active {
   background: var(--bg-3);
   color: var(--accent);
   text-decoration: none;
-}
-
-:root {
-  --bg: #0f1115;
-  --bg-2: #161922;
-  --bg-3: #1f2330;
-  --bg-4: #2a2f3d;
-  --border: #2a2f3d;
-  --border-light: #3a3f4d;
-  --text: #e6e8ee;
-  --muted: #9aa0ad;
-  --accent: #f5a524;
-  --accent-2: #e3679a;
-  --link: #7ab7ff;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.55;
-  font-size: 15px;
-}
-
-a {
-  color: var(--link);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* ============================================
@@ -462,6 +458,7 @@ footer.site p {
   justify-content: center;
   gap: 6px;
   overflow: hidden;
+  contain: layout paint;
 }
 
 .ad-label {
@@ -473,7 +470,12 @@ footer.site p {
 
 .ad-slot ins.adsbygoogle {
   display: block;
+  max-width: 100%;
   width: 100%;
+}
+
+.ad-slot iframe {
+  max-width: 100% !important;
 }
 
 .ad-banner {

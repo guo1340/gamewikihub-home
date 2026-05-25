@@ -31,6 +31,11 @@
     slot.dataset.adsRequested = "true";
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
+      setTimeout(() => {
+        if (slot.dataset.adStatus === "unfilled") {
+          slot.closest(".promo-frame")?.classList.add("promo-empty");
+        }
+      }, 2500);
     } catch {
       slot.dataset.adsRequested = "false";
     }

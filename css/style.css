@@ -62,8 +62,6 @@ aside.right {
   height: fit-content;
   position: sticky;
   top: 78px;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
 }
 
 aside h3 {
@@ -484,13 +482,13 @@ footer.site p {
 }
 
 .ad-rectangle {
-  min-height: 160px;
-  max-height: 180px;
+  min-height: 120px;
+  max-height: 140px;
 }
 
 .ad-half-page {
-  min-height: 240px;
-  max-height: 280px;
+  min-height: 160px;
+  max-height: 180px;
 }
 
 .ad-banner .adsbygoogle {
@@ -498,11 +496,11 @@ footer.site p {
 }
 
 .ad-rectangle .adsbygoogle {
-  height: 160px !important;
+  height: 120px !important;
 }
 
 .ad-half-page .adsbygoogle {
-  height: 240px !important;
+  height: 160px !important;
 }
 
 aside .ad-slot {

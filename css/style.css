@@ -10,6 +10,10 @@
   padding: 28px 24px;
 }
 
+.layout-2col {
+  grid-template-columns: 220px 1fr;
+}
+
 .layout main {
   max-width: none;
   padding: 0;

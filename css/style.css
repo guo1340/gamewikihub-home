@@ -337,7 +337,7 @@ main {
 .about-strip p {
   margin: 0;
   color: var(--muted);
-  max-width: 75ch;
+  /* max-width: 75ch; */
 }
 
 /* ============================================
@@ -513,6 +513,7 @@ aside .promo-frame {
 }
 
 @media (max-width: 1100px) {
+
   .layout,
   .layout.page-layout {
     grid-template-columns: 200px minmax(0, 1fr);
@@ -524,6 +525,7 @@ aside .promo-frame {
 }
 
 @media (max-width: 720px) {
+
   .layout,
   .layout.page-layout {
     grid-template-columns: 1fr;

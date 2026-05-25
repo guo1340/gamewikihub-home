@@ -43,9 +43,18 @@ a:hover {
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr) 210px;
   gap: 24px;
-  width: min(100%, 1500px);
+  width: min(100%, 1640px);
   margin: 0 auto;
   padding: 28px 24px;
+}
+
+/* Info pages (about / privacy / contact): keep the three columns clustered
+   together around a width-capped center column. On wide screens the whole
+   group is centered, leaving blank margins on the outside instead of pushing
+   the sidebars to the far edges. */
+.layout.page-layout {
+  grid-template-columns: 200px minmax(0, 1fr) 210px;
+  width: min(100%, 1200px);
 }
 
 .layout main {
@@ -363,7 +372,7 @@ main {
 .page p,
 .page li {
   color: var(--text);
-  max-width: 80ch;
+  max-width: 96ch;
 }
 
 .page ul {
@@ -498,18 +507,15 @@ footer.site p {
   height: 160px !important;
 }
 
-.promo-empty {
-  display: none;
-}
-
 aside .promo-frame {
   margin: 14px 0 0;
   padding: 8px;
 }
 
 @media (max-width: 1100px) {
-  .layout {
-    grid-template-columns: 200px 1fr;
+  .layout,
+  .layout.page-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
   }
 
   aside.right {
@@ -518,7 +524,8 @@ aside .promo-frame {
 }
 
 @media (max-width: 720px) {
-  .layout {
+  .layout,
+  .layout.page-layout {
     grid-template-columns: 1fr;
     padding: 12px;
   }

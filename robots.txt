@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://gamewikihub.com/sitemap.xml
+Sitemap: https://gamewikihub.com/network-sitemaps.xml

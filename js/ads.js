@@ -67,6 +67,10 @@
   };
 
   window.addEventListener("load", async () => {
+    if (window.__gwhLayoutReady) {
+      await window.__gwhLayoutReady;
+    }
+
     const slots = [...document.querySelectorAll("ins.adsbygoogle")];
     if (!slots.length) return;
 

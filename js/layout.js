@@ -1,5 +1,13 @@
 (() => {
+  const root = document.documentElement;
   const section = document.body.dataset.section || "";
+
+  const revealPage = () => {
+    root.classList.remove("layout-loading");
+    root.classList.add("layout-ready");
+    const loader = document.querySelector(".site-loader");
+    if (loader) loader.setAttribute("aria-hidden", "true");
+  };
 
   const markActive = () => {
     document.querySelectorAll("[data-section-link]").forEach((link) => {
@@ -20,9 +28,13 @@
 
   const includes = [...document.querySelectorAll("[data-include]")];
   window.__gwhLayoutReady = Promise.all(includes.map(loadInclude))
-    .then(() => markActive())
+    .then(() => {
+      markActive();
+      revealPage();
+    })
     .catch((error) => {
       console.error(error);
-      document.documentElement.classList.add("layout-include-error");
+      root.classList.add("layout-include-error");
+      revealPage();
     });
 })();

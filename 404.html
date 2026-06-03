@@ -6,7 +6,13 @@
   <title>Page Not Found - GameWikiHub</title>
   <meta name="description" content="The page you requested could not be found." />
   <meta name="robots" content="noindex, follow" />
-  <link rel="stylesheet" href="/css/style.css?v=20260603-1" />
+    <script>
+      document.documentElement.classList.add("layout-loading");
+      window.setTimeout(() => {
+        document.documentElement.classList.remove("layout-loading");
+      }, 4000);
+    </script>
+  <link rel="stylesheet" href="/css/style.css?v=20260603-2" />
   <style>
     .gw404{min-height:70vh;display:flex;flex-direction:column;align-items:center;
       justify-content:center;text-align:center;padding:3rem 1.25rem;gap:.5rem}
@@ -19,10 +25,24 @@
       transition:opacity .15s ease}
     .gw404 a.home:hover{opacity:.65}
   </style>
-  <script defer src="/js/layout.js?v=20260603-1"></script>
+  <script defer src="/js/layout.js?v=20260603-2"></script>
 </head>
 <body data-section="">
-  <div data-include="/partials/header.html"></div>
+  
+  <div class="site-loader" role="status" aria-live="polite">
+    <div class="loader-panel">
+      <div class="loader-mark">GameWikiHub</div>
+      <p class="loader-subtitle">assembling guide frame</p>
+      <div class="loader-bars" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p class="loader-note">Loading navigation, sidebars, and guide content...</p>
+    </div>
+  </div>
+    <div data-include="/partials/header.html"></div>
   <main class="gw404">
     <div class="code">404</div>
     <h1>Page not found</h1>
@@ -32,6 +52,8 @@
   <div data-include="/partials/footer.html"></div>
 </body>
 </html>
+
+
 
 
 

@@ -10,11 +10,31 @@
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://gamewikihub.com/best-survival-games-2026.html" />
-    <link rel="stylesheet" href="/css/style.css?v=20260603-1" />
-    <script defer src="/js/layout.js?v=20260603-1"></script>
+    <script>
+      document.documentElement.classList.add("layout-loading");
+      window.setTimeout(() => {
+        document.documentElement.classList.remove("layout-loading");
+      }, 4000);
+    </script>
+    <link rel="stylesheet" href="/css/style.css?v=20260603-2" />
+    <script defer src="/js/layout.js?v=20260603-2"></script>
     <script defer src="/js/ads.js?v=20260525-4"></script>
   </head>
   <body data-section="best-games">
+    
+  <div class="site-loader" role="status" aria-live="polite">
+    <div class="loader-panel">
+      <div class="loader-mark">GameWikiHub</div>
+      <p class="loader-subtitle">assembling guide frame</p>
+      <div class="loader-bars" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p class="loader-note">Loading navigation, sidebars, and guide content...</p>
+    </div>
+  </div>
     <div data-include="/partials/header.html"></div>
 
     <div class="layout page-layout">
@@ -190,6 +210,8 @@
     <div data-include="/partials/footer.html"></div>
   </body>
 </html>
+
+
 
 
 

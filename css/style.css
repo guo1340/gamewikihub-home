@@ -44,6 +44,123 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+html.layout-loading,
+html.layout-loading body {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+html.layout-loading body > :not(.site-loader) {
+  visibility: hidden;
+}
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 28% 24%, rgba(245, 165, 36, 0.18), transparent 32%),
+    radial-gradient(circle at 72% 68%, rgba(227, 103, 154, 0.14), transparent 35%),
+    var(--bg);
+  background-size: 34px 34px, 34px 34px, auto, auto, auto;
+}
+
+html.layout-loading .site-loader {
+  display: flex;
+}
+
+html.layout-ready .site-loader,
+.site-loader[aria-hidden="true"] {
+  display: none;
+}
+
+.loader-panel {
+  width: min(100%, 420px);
+  background: rgba(22, 25, 34, 0.94);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.46);
+  padding: 26px;
+  text-align: center;
+}
+
+.loader-mark {
+  display: inline-block;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  font-size: 24px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.loader-subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.loader-bars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 0 auto 18px;
+  max-width: 240px;
+}
+
+.loader-bars span {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--bg-4);
+  overflow: hidden;
+  position: relative;
+}
+
+.loader-bars span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: translateX(-100%);
+  animation: loader-scan 1.15s ease-in-out infinite;
+}
+
+.loader-bars span:nth-child(2)::after {
+  animation-delay: 0.12s;
+}
+
+.loader-bars span:nth-child(3)::after {
+  animation-delay: 0.24s;
+}
+
+.loader-bars span:nth-child(4)::after {
+  animation-delay: 0.36s;
+}
+
+.loader-note {
+  color: var(--text);
+  margin: 0;
+  font-size: 14px;
+}
+
+@keyframes loader-scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  45%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .layout {
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr) 210px;

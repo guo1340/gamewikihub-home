@@ -12,12 +12,11 @@
     <link rel="canonical" href="https://gamewikihub.com/rimworld-vs-dwarf-fortress.html" />
     <script>
       document.documentElement.classList.add("layout-loading");
-      window.setTimeout(() => {
-        document.documentElement.classList.remove("layout-loading");
-      }, 4000);
+      window.setTimeout(() => { if (!window.__gwhLayoutStarted) document.documentElement.classList.remove("layout-loading"); }, 12000);
     </script>
-    <link rel="stylesheet" href="/css/style.css?v=20260603-2" />
-    <script defer src="/js/layout.js?v=20260603-2"></script>
+    <link rel="stylesheet" href="/css/style.css?v=20260604-1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script defer src="/js/layout.js?v=20260604-1"></script>
     <script defer src="/js/ads.js?v=20260525-4"></script>
   </head>
   <body data-section="comparisons">
@@ -38,7 +37,7 @@
     <div data-include="/partials/header.html"></div>
 
     <div class="layout page-layout">
-      <div data-include="/partials/sidebar-left-editorial.html"></div>
+      <div data-include="/partials/sidebar-left-main.html"></div>
 
       <main>
         <article class="page guide-page">
@@ -211,12 +210,15 @@
         </article>
       </main>
 
-      <div data-include="/partials/sidebar-right-comparison.html"></div>
+      <div data-include="/partials/sidebar-right-featured.html"></div>
     </div>
 
     <div data-include="/partials/footer.html"></div>
   </body>
 </html>
+
+
+
 
 
 

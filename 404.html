@@ -8,11 +8,10 @@
   <meta name="robots" content="noindex, follow" />
     <script>
       document.documentElement.classList.add("layout-loading");
-      window.setTimeout(() => {
-        document.documentElement.classList.remove("layout-loading");
-      }, 4000);
+      window.setTimeout(() => { if (!window.__gwhLayoutStarted) document.documentElement.classList.remove("layout-loading"); }, 12000);
     </script>
-  <link rel="stylesheet" href="/css/style.css?v=20260603-2" />
+  <link rel="stylesheet" href="/css/style.css?v=20260604-1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <style>
     .gw404{min-height:70vh;display:flex;flex-direction:column;align-items:center;
       justify-content:center;text-align:center;padding:3rem 1.25rem;gap:.5rem}
@@ -25,7 +24,7 @@
       transition:opacity .15s ease}
     .gw404 a.home:hover{opacity:.65}
   </style>
-  <script defer src="/js/layout.js?v=20260603-2"></script>
+  <script defer src="/js/layout.js?v=20260604-1"></script>
 </head>
 <body data-section="">
   
@@ -52,6 +51,9 @@
   <div data-include="/partials/footer.html"></div>
 </body>
 </html>
+
+
+
 
 
 

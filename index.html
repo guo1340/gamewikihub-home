@@ -14,11 +14,10 @@
     <link rel="canonical" href="https://gamewikihub.com/" />
     <script>
       document.documentElement.classList.add("layout-loading");
-      window.setTimeout(() => {
-        document.documentElement.classList.remove("layout-loading");
-      }, 4000);
+      window.setTimeout(() => { if (!window.__gwhLayoutStarted) document.documentElement.classList.remove("layout-loading"); }, 12000);
     </script>
-    <link rel="stylesheet" href="/css/style.css?v=20260603-2" />
+    <link rel="stylesheet" href="/css/style.css?v=20260604-1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='14' y='22' width='72' height='56' rx='10' fill='%23161922' stroke='%23f5a524' stroke-width='4'/%3E%3Ccircle cx='34' cy='50' r='6' fill='%23f5a524'/%3E%3Ccircle cx='66' cy='50' r='6' fill='%23e3679a'/%3E%3C/svg%3E"
@@ -35,7 +34,7 @@
       content="Player-focused strategy wikis, recommendations, and comparisons for deep indie and cult games."
     />
     <meta property="og:url" content="https://gamewikihub.com/" />
-    <script defer src="/js/layout.js?v=20260603-2"></script>
+    <script defer src="/js/layout.js?v=20260604-1"></script>
 
     <script defer src="/js/ads.js?v=20260525-4"></script>
   </head>
@@ -357,6 +356,9 @@
     <div data-include="/partials/footer.html"></div>
   </body>
 </html>
+
+
+
 
 
 

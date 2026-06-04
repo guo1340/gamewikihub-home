@@ -1,4 +1,5 @@
 (() => {
+  window.__gwhLayoutStarted = true;
   const root = document.documentElement;
   const section = document.body.dataset.section || "";
 
@@ -26,8 +27,27 @@
     placeholder.replaceWith(fragment);
   };
 
+  const waitForWindowLoad = () => {
+    if (document.readyState === "complete") return Promise.resolve();
+    return new Promise((resolve) => {
+      window.addEventListener("load", resolve, { once: true });
+    });
+  };
+
+  const waitForFonts = () => {
+    if (!document.fonts || !document.fonts.ready) return Promise.resolve();
+    return document.fonts.ready.catch(() => {});
+  };
+
+  const waitForNextPaint = () =>
+    new Promise((resolve) => {
+      requestAnimationFrame(() => requestAnimationFrame(resolve));
+    });
+
   const includes = [...document.querySelectorAll("[data-include]")];
   window.__gwhLayoutReady = Promise.all(includes.map(loadInclude))
+    .then(() => Promise.all([waitForWindowLoad(), waitForFonts()]))
+    .then(() => waitForNextPaint())
     .then(() => {
       markActive();
       revealPage();

@@ -170,13 +170,9 @@ html.layout-ready .site-loader,
   padding: 28px 24px;
 }
 
-/* Info pages (about / privacy / contact): keep the three columns clustered
-   together around a width-capped center column. On wide screens the whole
-   group is centered, leaving blank margins on the outside instead of pushing
-   the sidebars to the far edges. */
 .layout.page-layout {
   grid-template-columns: 200px minmax(0, 1fr) 210px;
-  width: min(100%, 1200px);
+  width: min(100%, 1640px);
 }
 
 .layout main {
